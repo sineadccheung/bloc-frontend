@@ -31,7 +31,8 @@ html {
     top: 0;
     right: 0;
     height: 100px;
-    color: white:currentColor;text-decoration: none;
+    color: white;
+    text-decoration: none;
   }
 
   .links-container .navbar-link {
@@ -52,7 +53,11 @@ html {
   }
 
   .links-container .navbar-link:hover {
-    color: rgb (233,50,117);
+    color: rgb(233,50,117);
+  }
+
+  .links-container .navbar-link:active {
+    background-color: white;
   }
 
   .hero-content {
