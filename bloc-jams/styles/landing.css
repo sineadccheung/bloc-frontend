@@ -43,6 +43,7 @@ body.landing {
      transform: scaleX(0.9) translateY (3rem);
      -webkit-transition: all 0.25s ease-in-out;
      -moz-transform: all 0.25s ease-in-out;
+     transition: all 0.25s ease-in-out;
      -webkit-transition-delay: 0.2s;
      -moz-transform: 0.25s;
      transition-delay: 0.2s;
