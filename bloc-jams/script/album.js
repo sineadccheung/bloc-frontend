@@ -30,6 +30,23 @@
      ]
  };
 
+// Sinead's Album
+ var albumFake = {
+     title: 'Dinosaur',
+     artist: 'Sinead Cheung',
+     label: 'PM',
+     year: '1992',
+     albumArtUrl: 'assets/images/album_covers/20.png',
+     songs: [
+         { title: 'Hello, Operator?', duration: '1:01' },
+         { title: 'Ring, ring, ring', duration: '5:01' },
+         { title: 'Fits in your pocket', duration: '3:21'},
+         { title: 'Can you hear me now?', duration: '3:14' },
+         { title: 'Wrong phone number', duration: '2:15'}
+     ]
+ };
+
+
  var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
