@@ -36,17 +36,17 @@
      artist: 'Sinead Cheung',
      label: 'PM',
      year: '1992',
-     albumArtUrl: 'assets/images/album_covers/20.png',
+     albumArtUrl: 'assets/images/album_covers/21.png',
      songs: [
-         { title: 'Hello, Operator?', duration: '1:01' },
-         { title: 'Ring, ring, ring', duration: '5:01' },
-         { title: 'Fits in your pocket', duration: '3:21'},
-         { title: 'Can you hear me now?', duration: '3:14' },
-         { title: 'Wrong phone number', duration: '2:15'}
+         { title: 'Hello', duration: '1:01' },
+         { title: 'Friend', duration: '5:01' },
+         { title: 'Practice', duration: '3:21'},
+         { title: 'Java', duration: '3:14' },
+         { title: 'Fighting!', duration: '2:15'}
      ]
  };
 
-
+//song list
  var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -58,6 +58,12 @@
 
      return template;
  };
+
+//change to a universal variable
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+
+//setting album cover
+
  var setCurrentAlbum = function(album) {
       // #1
       var albumTitle = document.getElementsByClassName('album-view-title')[0];
@@ -83,4 +89,16 @@
 
   window.onload = function() {
       setCurrentAlbum(albumPicasso);
+
+      var allalbums = [albumPicasso, albumMarconi, albumFake];
+      var index = 1;
+
+      albumImage.addEventListener("click", function(event){
+        setCurrentAlbum(allalbums[index]);
+        index++;
+        if (index == allalbums.length){
+          index = 0;
+        }
+      });
+
   };
