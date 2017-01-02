@@ -41,6 +41,7 @@
 
      return template;
  };
+
  var setCurrentAlbum = function(album) {
       // #1
       var albumTitle = document.getElementsByClassName('album-view-title')[0];
@@ -64,15 +65,20 @@
       }
   };
 
-//play to pause button
+
+//play to pause button, REWRITTEN ASSIGNMENT - CHECK IF PARENT EXIST && IF PARENT HAS A CLASS NAME
 var findParentByClassName = function (element, targetClass){
   if (element) {
-        var currentParent = element.parentElement;
-        while (currentParent.className != targetClass && currentParent.className !== null) {
-            currentParent = currentParent.parentElement;
-        }
-        return currentParent;
+    var currentParent = element.parentElement;
+    while (element.parentElement.length < 0){
+          alert('No parent found');
     }
+    while (currentParent.className != targetClass && currentParent.className !== null) {
+          currentParent = currentParent.parentElement;
+          alert ('No parent found with that class name');
+      }
+      return currentParent;
+  }
 };
 
 var getSongItem = function(element) {
