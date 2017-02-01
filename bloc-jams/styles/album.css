@@ -1,12 +1,10 @@
 body.album {
      background-image: url(../assets/images/blurred_backgrounds/blur_bg_3.jpg);
-     background-repeat: no-repeat;
-     background-attachment: fixed;
+     background-repeat: repeat-y;
      background-position: center center;
      background-size: cover;
-     padding-bottom: 200px;
- 
-}
+     padding-bottom: 150px;
+ }
  
  .album-cover-art {
      position: relative;
@@ -36,7 +34,7 @@ body.album {
      font-size: 0.75rem;
  }
 
-.album-view-song-list {
+  .album-view-song-list {
      width: 90%;
      margin: 1.5rem auto;
      font-weight: 300;
@@ -49,18 +47,29 @@ body.album {
  }
  
  .song-item-number {
-     width: 5%;
-     min-width: 30px;
+     width: 15%;
+ }
+
+ th.song-item-number {
+     text-align: left;
  }
  
  .song-item-title {
      width: 85%;
  }
+
  
  .song-item-duration {
      width: 5%;
+     text-align: center;
  }
 
+ .song-item-plays {
+     width: 5%;
+     text-align: center;    
+ }
+
+ 
  .album-song-button {
      text-align: center;
      font-size: 14px;
@@ -70,6 +79,10 @@ body.album {
      display: inline-block;
      width: 28px;
      height: 28px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2px;
  }
  
  .album-song-button:hover {
@@ -78,14 +91,25 @@ body.album {
      background-color: rgb(210, 40, 123);
  }
  
- .album-song-button span {
+ .album-song-button i {
      line-height: 28px;
  }
+ 
+ .album-song-button .fa-play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2px;
+ }
+ 
+ .album-song-listing td {
+     vertical-align: middle;
+ }
 
-
- @media (max-width: 640px) and (min-width: 320px) {
+/* Responsive  */
+ @media (max-width: 40rem) and (min-width: 20rem) {
      .album-view-details {
-         text-align: center;
+         text-align: center
      }
      
      .album-view-title {
@@ -93,8 +117,10 @@ body.album {
      }
  }
  
- /* #3 */
- @media (max-width: 1024px) and (min-width: 320px) {
+ @media (max-width: 64rem) and (min-width: 20rem) {
+     body.album {
+         padding-bottom: 200px;
+     }
     .album-view-song-list {
          position: relative;
          top: 1rem;
