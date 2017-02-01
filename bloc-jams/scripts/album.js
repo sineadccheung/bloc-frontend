@@ -1,7 +1,7 @@
 
 
 var createSongRow = function(songNumber, songName, songLength) {
-     
+
        var template =
         '<tr class="album-view-song-item">'
       + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
@@ -9,13 +9,13 @@ var createSongRow = function(songNumber, songName, songLength) {
       + '  <td class="song-item-duration">' + songLength + '</td>'
       + '</tr>'
       ;
- 
+
      var $row = $(template);
 
     var clickHandler = function() {
 
         var songNumber = parseInt($(this).attr('data-song-number'));
-        
+
 
         if (currentlyPlayingSongNumber !== null) {
             var currentlyPlayingCell = parseInt($('.song-item-number[data-song-number="' + currentlyPlayingSongNumber + '"]'));
@@ -42,7 +42,7 @@ var createSongRow = function(songNumber, songName, songLength) {
     //                 $songItem.html(playButtonTemplate);
     //             }
     //         }
-      
+
     // };
 
      var onHover = function(event) {
@@ -65,11 +65,11 @@ var createSongRow = function(songNumber, songName, songLength) {
     };
 
     // var offHover = function(event) {
-      
+
     //          var $leavingSongItem = $(this);
     //          var songItem = $leavingSongItem.find('.song-item-number');
     //          var leavingSongItemNumber = songItem.attr('data-song-number');
-             
+
     //          if (leavingSongItemNumber !== currentlyPlayingSong) {
     //              songItem.html(leavingSongItemNumber);
     //          }
@@ -84,21 +84,21 @@ var createSongRow = function(songNumber, songName, songLength) {
 
  var setCurrentAlbum = function(album) {
      currentAlbum = album;
- 
+
      var $albumTitle = $('.album-view-title');
      var $albumArtist = $('.album-view-artist');
      var $albumReleaseInfo = $('.album-view-release-info');
      var $albumImage = $('.album-cover-art');
      var $albumSongList = $('.album-view-song-list');
- 
+
      $albumTitle.text(album.name);
      $albumArtist.text(album.artist);
      $albumReleaseInfo.text(album.year + ' ' + album.label);
      $albumImage.attr('src', album.albumArtUrl);
- 
+
 
      $albumSongList.empty();
- 
+
      for (i = 0; i < album.songs.length; i++) {
         var $newRow = createSongRow(i + 1, album.songs[i].name, album.songs[i].length);
         $albumSongList.append($newRow);
@@ -127,53 +127,53 @@ var getSongNumberCell = function(number){
 };
 
  var nextSong = function() {
-    
+
     var getLastSongNumber = function(index) {
         return index == 0 ? currentAlbum.songs.length : index;
     };
-    
+
     var currentSongIndex = trackIndex(currentAlbum, currentSongFromAlbum);
     currentSongIndex++;
-    
+
     if (currentSongIndex >= currentAlbum.songs.length) {
         currentSongIndex = 0;
     }
-    
+
     setSong(currentSongIndex + 1);
     updatePlayerBarSong();
-    
+
     var lastSongNumber = getLastSongNumber(currentSongIndex);
     var $nextSongNumberCell = getSongNumberCell(currentlyPlayingSongNumber);
     var $lastSongNumberCell = getSongNumberCell(lastSongNumber);
-    
+
     $nextSongNumberCell.html(pauseButtonTemplate);
     $lastSongNumberCell.html(lastSongNumber);
-    
+
 };
 
  var previousSong = function() {
-    
+
     var getLastSongNumber = function(index) {
         return index == (currentAlbum.songs.length - 1) ? 1 : index + 2;
     };
-  
+
     var currentSongIndex = trackIndex(currentAlbum, currentSongFromAlbum);
     currentSongIndex--;
-    
+
     if (currentSongIndex < 0) {
         currentSongIndex = currentAlbum.songs.length - 1;
     }
-    
+
     setSong(currentSongIndex + 1);
     updatePlayerBarSong();
-    
+
     var lastSongNumber = getLastSongNumber(currentSongIndex);
     var $previousSongNumberCell = getSongNumberCell(currentlyPlayingSongNumber);
     var $lastSongNumberCell = getSongNumberCell(lastSongNumber);
-    
+
     $previousSongNumberCell.html(pauseButtonTemplate);
     $lastSongNumberCell.html(lastSongNumber);
-    
+
 };
 
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
@@ -201,8 +201,8 @@ document.getElementsByClassName("album-cover-art")[0].addEventListener("click", 
 
 function changeAlbum() {
    index++;
-    if(index === myAlbums.length){ 
+    if(index === myAlbums.length){
        index=0;
     }
-    setCurrentAlbum(myAlbums[index]);   
+    setCurrentAlbum(myAlbums[index]);
 }

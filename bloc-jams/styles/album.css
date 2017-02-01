@@ -5,30 +5,30 @@ body.album {
      background-size: cover;
      padding-bottom: 150px;
  }
- 
+
  .album-cover-art {
      position: relative;
      left: 20%;
      margin-top: 1rem;
      width: 60%;
  }
- 
+
  .album-view-details {
      position: relative;
      top: 1.5rem;
      padding: 1rem;
  }
- 
+
  .album-view-details .album-view-title {
      font-weight: 300;
      font-size: 2rem;
  }
- 
+
  .album-view-details .album-view-artist {
      font-weight: 300;
      font-size: 1.5rem;
  }
- 
+
  .album-view-details .album-view-release-info {
      font-weight: 300;
      font-size: 0.75rem;
@@ -40,12 +40,12 @@ body.album {
      font-weight: 300;
      font-size: 0.75em;
  }
- 
+
  .album-view-song-item {
      height: 3rem;
      border-bottom: 1px solid rgba(255,255,255,0.5);
  }
- 
+
  .song-item-number {
      width: 15%;
  }
@@ -53,12 +53,12 @@ body.album {
  th.song-item-number {
      text-align: left;
  }
- 
+
  .song-item-title {
      width: 85%;
  }
 
- 
+
  .song-item-duration {
      width: 5%;
      text-align: center;
@@ -66,10 +66,10 @@ body.album {
 
  .song-item-plays {
      width: 5%;
-     text-align: center;    
+     text-align: center;
  }
 
- 
+
  .album-song-button {
      text-align: center;
      font-size: 14px;
@@ -84,24 +84,24 @@ body.album {
     align-items: center;
     padding-left: 2px;
  }
- 
+
  .album-song-button:hover {
      cursor: pointer;
      color: white;
      background-color: rgb(210, 40, 123);
  }
- 
+
  .album-song-button i {
      line-height: 28px;
  }
- 
+
  .album-song-button .fa-play {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 2px;
  }
- 
+
  .album-song-listing td {
      vertical-align: middle;
  }
@@ -111,12 +111,12 @@ body.album {
      .album-view-details {
          text-align: center
      }
-     
+
      .album-view-title {
-         margin-top: 0;   
+         margin-top: 0;
      }
  }
- 
+
  @media (max-width: 64rem) and (min-width: 20rem) {
      body.album {
          padding-bottom: 200px;

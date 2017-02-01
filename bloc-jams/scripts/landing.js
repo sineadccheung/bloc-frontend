@@ -1,7 +1,7 @@
 
 
   var animatePoints = function() {
-     //Animates points           
+     //Animates points
     var revealPoint = function() {
         $(this).css({
              opacity: 1,
@@ -10,7 +10,7 @@
      };
     $.each($('.point'), revealPoint);
 };
- 
+
 
  $(window).load(function() {
 

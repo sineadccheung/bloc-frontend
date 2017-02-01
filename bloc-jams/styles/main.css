@@ -7,13 +7,13 @@
 html {
      height: 100%;
  }
- 
+
  body {
-     font-family: 'Open Sans'; 
-     color: white; 
-     min-height: 100%; 
+     font-family: 'Open Sans';
+     color: white;
+     min-height: 100%;
  }
- 
+
  .navbar {
  	position: relative;
 	padding: 0.5rem;
@@ -34,7 +34,7 @@ html {
 	right: 0;
 	height: 100px;
 	color: white;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 .links-container .navbar-link {
@@ -80,13 +80,13 @@ html {
      	padding-left: 1rem;
      	padding-right: 1rem;
      }
-      
+
      .column.full { width: 100%; }
      .column.two-thirds { width: 66.7%; }
      .column.half { width: 50%; }
      .column.third { width: 33.3%; }
      .column.fourth { width: 25%; }
-     .column.flow-opposite { float: right; }  
+     .column.flow-opposite { float: right; }
  }
 
  /* Large screens (1024px) */
@@ -99,7 +99,7 @@ html {
      content: " ";
      display: table;
  }
- 
+
  .clearfix:after {
      clear: both;
  }

@@ -12,7 +12,7 @@ var albumPicasso = {
          { name: 'Magenta', length: '2:15'}
      ]
 };
- 
+
 var albumMarconi = {
      name: 'The Telephone',
      artist: 'Guglielmo Marconi',
