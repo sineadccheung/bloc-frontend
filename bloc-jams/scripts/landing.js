@@ -1,32 +1,28 @@
+var animatePoints = function animatePoints() {
 
-
-  var animatePoints = function() {
-     //Animates points
-    var revealPoint = function() {
+    var revealPoint = function revealPoint() {
         $(this).css({
-             opacity: 1,
-             transform: 'scaleX(1) translateY(0)'
-         });
-     };
+            opacity: 1,
+            transform: 'scaleX(1) scaleY(1) translateY(0)',
+            color: 'white'
+        });
+    };
+
     $.each($('.point'), revealPoint);
 };
 
+$(window).load(function () {
+    // automatically animate selling points on tall screens
+    if ($(window).height > 950) {
+        animatePoints();
+    }
 
- $(window).load(function() {
+    // animate selling points when user scrolls them into view
+    var scrollDistance = $('.selling-points').offset().top - $(window).height() + 200;
 
-    var pointsArray = document.getElementsByClassName('point');
-
-    // Automatically animates the points on a tall screen where scrolling can't trigger the animation
-      if ($(window).height() > 950) {
-         animatePoints();
-     }
-
-    //Automatically animates points once the screen scrolls to their position
-      $(window).scroll(function(event) {
-
-            if ($(window).scrollTop() <= 500) {
-             animatePoints();
-         }
-     });
-
- });
+    $(window).scroll(function (event) {
+        if ($(window).scrollTop() >= scrollDistance) {
+            animatePoints();
+        }
+    });
+});
