@@ -4,8 +4,9 @@
   <head>
     <title>Bloc Chat</title>
   </head>
-  <body ng-app="blocChat">
-  </body>
+  <body ng-controller="MainCtrl">
+  <section ui-view></section>
+</body>
 
 <!-- Modules -->
 
@@ -16,3 +17,27 @@
 </script>
 
 </html>
+
+
+
+<!-- Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+</body>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDjz7uRgOAfgN-QCf6VPViCfMIa3YiTce4",
+    authDomain: "bloc-chat-1dfc1.firebaseapp.com",
+    databaseURL: "https://bloc-chat-1dfc1.firebaseio.com",
+    projectId: "bloc-chat-1dfc1",
+    storageBucket: "bloc-chat-1dfc1.appspot.com",
+    messagingSenderId: "426502073427"
+  };
+  firebase.initializeApp(config);
+</script>
